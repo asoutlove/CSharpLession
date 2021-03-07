@@ -13,7 +13,7 @@ namespace SleepHelper2
 
                 int ms = second * 1000;
                 Random ren = new Random();
-                int inser = ren.Next(4, 6);
+                int inser = ren.Next(1, 5);
                 ms += inser;
                 System.Threading.Thread.Sleep(ms);
 
