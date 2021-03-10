@@ -15,26 +15,26 @@ namespace FileAndFolderHandling
 
             if (Directory.Exists(destPath))//確認資料夾是否存在&列舉目錄
             {
-                foreach (string d in Directory.GetFileSystemEntries(destPath))
+                foreach (string dest in Directory.GetFileSystemEntries(destPath))//用來傳回內容目錄名稱
                 {
-                    if (System.IO.File.Exists(d))
+                    if (System.IO.File.Exists(dest))//確認子資料夾是否還有檔案，進行刪除
                     {
-                        FileInfo fi = new FileInfo(d);
-                        if (fi.Attributes.ToString().IndexOf("ReadOnly") != -1)
-                            fi.Attributes = FileAttributes.Normal;
-                        System.IO.File.Delete(d);//刪除文件
+                        FileInfo insideFile = new FileInfo(dest);
+                        if (insideFile.Attributes.ToString().IndexOf("ReadOnly") != -1)
+                            insideFile.Attributes = FileAttributes.Normal;
+                        System.IO.File.Delete(dest);//刪除檔案
                     }
                     else
-                        DeleteFolder(d);//刪除子資料夾
+                        DeleteFolder(dest);//刪除子資料夾
                 }
                 Directory.Delete(destPath);//删除空資料夾
-                Console.WriteLine($"資料夾已刪除。");
+                
             }
             else
             {
                 Console.WriteLine($"此資料夾{destPath}不存在。");
             }
-
         }
+        
     }
 }
