@@ -15,6 +15,7 @@ namespace FileAndFolderHandling
                 try
                 {
                     File.Move(sourceFileName, destPath);
+                    Console.WriteLine("檔案已移動");
                 }
                 catch (Exception ex)
                 {

@@ -17,7 +17,7 @@ namespace FileAndFolderHandling
                 {
                     string text = File.ReadAllText(sourceFileName);
                     File.Delete(sourceFileName);
-                    Console.WriteLine($"已刪除");
+                    Console.WriteLine($"檔案已刪除");
                 }
                 catch (IOException e)
                 {

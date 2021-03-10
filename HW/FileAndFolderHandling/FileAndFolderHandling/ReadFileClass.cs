@@ -16,6 +16,7 @@ namespace FileAndFolderHandling
                 try
                 {
                     string text = File.ReadAllText(sourceFileName);
+                    Console.WriteLine($"檔案讀取內容如下:\n" );
                     Console.WriteLine($"{text}");
                 }
                 catch (Exception ex)

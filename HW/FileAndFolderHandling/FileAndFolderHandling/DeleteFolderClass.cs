@@ -28,6 +28,7 @@ namespace FileAndFolderHandling
                         DeleteFolder(d);//刪除子資料夾
                 }
                 Directory.Delete(destPath);//删除空資料夾
+                Console.WriteLine($"資料夾已刪除。");
             }
             else
             {

@@ -16,6 +16,7 @@ namespace FileAndFolderHandling
                 try
                 {
                     File.Copy(sourceFileName, destPath);
+                    Console.WriteLine("檔案已複製");
                 }
                 catch (Exception ex)
                 {
